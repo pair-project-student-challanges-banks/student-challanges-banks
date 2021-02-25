@@ -1,0 +1,12 @@
+[
+    {
+        "title" : "Angka Palindrom",
+        "deadline": "11-11-2012",
+        "description" : "Menentukan bilangan yang Palindrom dan bilangan yang bukan Palindrom"
+    },
+    {
+        "title" : "Baris Deret",
+        "deadline": "11-11-2012",
+        "description" : "Menentukan Baris dan Deret"
+    }
+] 

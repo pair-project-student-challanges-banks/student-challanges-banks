@@ -1,16 +1,30 @@
-const { User, Challange } = require('../models')
+const { User, Challange, StudentChallange } = require('../models')
 
 class UserControl{
     static dashboard(req,res) {
-        res.render('dashboard')
+        User.findAll()
+        .then(student => {
+            res.render('dashboard', { student })    
+        })
+        .catch(err => {res.send(err)})
     }
 
     static challanges(req,res) {
-        res.render('challange')
+        Challange.findAll()
+        .then(challange => {
+            res.render('challange', { challange })
+        })
+        .catch(err => {res.send(err)})
     }
 
     static studentChallanges(req,res) {
-        res.render('studentChallange')
+        let students = User.findAll()
+        let challanges = Challange.findAll()
+        Promise.all([students, challanges])
+        .then(values => {
+            res.render('studentChallange', { student: values[0], challange: values[1] })
+        })
+        .catch(err => {res.send(err)})
     }
 }
 

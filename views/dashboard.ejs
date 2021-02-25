@@ -8,13 +8,20 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">No.</th>
-            <th scope="col">Full Name</th>
+            <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Gender</th>
+            <th scope="col">Grade</th>
           </tr>
         </thead>
         <tbody>
-          
+          <% student.forEach((el, i) => { %>
+           <tr>
+               <th><%= i + 1 %> </th>
+               <th><%= el.fullName(el.first_name, el.last_name) %></th>
+               <th><%= el.email %></th>
+               <th><%= el.grade %></th>
+           </tr>
+          <% }) %>
         </tbody>
       </table>
 </div>

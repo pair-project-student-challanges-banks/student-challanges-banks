@@ -1,10 +1,11 @@
+const { User } = require('../models')
 class LoginSign{
     static userLogin(req,res) {
         res.render('formlogin')
     }
 
     static postLogin(req,res) {
-        // console.log(req.body);
+        console.log(req.body);
     }
 
     static userRegister(req,res) {

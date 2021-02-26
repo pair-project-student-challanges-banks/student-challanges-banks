@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'StudentChallange',
     hooks: {
       beforeCreate(instance) {
-        instance.isSubmit = false
+        // instance.isSubmit = false
       }
     }
   });

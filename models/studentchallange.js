@@ -16,10 +16,15 @@ module.exports = (sequelize, DataTypes) => {
   StudentChallange.init({
     isSubmit: DataTypes.BOOLEAN,
     UserId: DataTypes.INTEGER,
-    ChallangeId: DataTypes.INTEGER
+    ChallangesId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'StudentChallange',
+    hooks: {
+      beforeCreate(instance) {
+        instance.isSubmit = false
+      }
+    }
   });
   return StudentChallange;
 };

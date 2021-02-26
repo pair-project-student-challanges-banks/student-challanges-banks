@@ -1,8 +1,8 @@
 const auth = (req,res,next) => {
-    if (req.session.user) {
+    if (req.session.userId) {
         next()
     } else {
-        res.redirect('/')
+        res.redirect('/loginSign/userLogin')
     }
 }
 

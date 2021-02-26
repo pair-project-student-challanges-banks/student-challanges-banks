@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <h2>Detail For Challange</h2>
+    <p>title : <%= challange.title %></p>
+    <p>desc : <%= challange.description %> </p>
+
+    <h6>Students : </h6>
+    <table border>
+        <% challange.Users.forEach(el => { %>
+            <tr>
+                <th><%= el.fullName(el.first_name, el.last_name) %> </th>
+            </tr>
+        <% }) %>
+    </table>
+</div>

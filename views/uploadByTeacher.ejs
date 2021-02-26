@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+<br>
+<h2 style="text-align: center;">Send Challanges</h2>
+<div class="container" style="background-color:cadetblue;border-radius: 10px; position: relative; top: 3em; width: 50%; padding: 20px;">
+    <form action="/studentChallanges/upload" method="POST">
+        <div class="form-group">
+            <label for="ChallangesId">Challanges</label>
+            <select class="form-control" name="ChallangesId">
+                <% challanges.forEach(el => { %>
+                <option value="<%= el.id %> "> <%= el.title %> </option>
+                <% }) %>  
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="UserId">Students Name</label>
+            <select class="form-control" name="UserId">
+                <% users.forEach(el => { %>
+                <option value="<%= el.id %> "><%= el.fullName(el.first_name, el.last_name) %> </option>
+                <% }) %>  
+            </select>
+          </div><div class="form-check">
+            <label for="isSubmit">Status : </label><br>
+            <input class="form-check-input" type="radio" name="isSubmit" value="true" checked>
+            <label class="form-check-label" for="role">Completed</label><br>
+            <input class="form-check-input" type="radio" name="isSubmit" value="valse">
+            <label class="form-check-label" for="role">Uncompleted</label>
+        </div><br>
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <button class="btn btn-primary"><a href="/studentChallanges" style="color: white; text-decoration: none;">Cancel</a></button>
+      </form>
+</div>
+</body>
+</html>

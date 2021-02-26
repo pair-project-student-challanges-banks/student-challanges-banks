@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container"  style="text-align: center;">
+    <br>
+    <h1>Challanges</h1>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Title</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Description</th>
+              </tr>
+        </thead>
+        <tbody>
+          <% challange.forEach((el, i) => { %>
+            <tr>
+                <td> <%= i + 1 %> </td>
+                <td> <%= el.title %> </td>
+                <td> <%= el.deadline %> </td>
+                <td> <a href="" class="btn btn-primary"> Detail </a> </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+</div>

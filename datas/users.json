@@ -1,0 +1,29 @@
+[
+  {
+    "first_name": "Agus",
+    "last_name": "Suryandani",
+    "email": "agussuryandani@gmail.com",
+    "username": "agussuryandani",
+    "password": "agus123",
+    "role": "student",
+    "grade": "VII"
+  },
+  {
+    "first_name": "Ajeng",
+    "last_name": "Kusumaningsih",
+    "email": "ajengkusumaningsih@gmail.com",
+    "username" : "ajengkusuma",
+    "password": "ajeng123",
+    "role": "teacher",
+    "grade": "VII"
+  },
+  {
+    "first_name": "Arman",
+    "last_name": "Fahrezi",
+    "email": "armanfahrezi@gmail.com",
+    "username" : "armanfahrezi",
+    "password": "arman123",
+    "role": "student",
+    "grade": "VII"
+  }
+]

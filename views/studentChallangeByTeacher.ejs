@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container"  style="text-align: center;">
+    <br>
+    <h1>Student Challanges</h1>
+    <br>
+    <a class="btn btn-primary" href="/studentChallanges/upload">Upload Challange</a>
+    <br><br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Title Challange</th>
+                <th scope="col">Status</th>
+              </tr>
+        </thead>
+        <tbody>
+          <% users.forEach((el) => { %>
+            <% el.Challanges.forEach((element, i) => { %>    
+                <% if (element !== undefined) { %>
+            <tr>
+                <td><%= el.fullName(el.first_name, el.last_name) %> </td>
+                <td><%= element.title %></td>
+                <% if (element.StudentChallange.isSubmit === false) { %>
+                 <td><button type="button" class="btn btn-danger btn-sm">Uncompleted</button></td>
+                <% } else if (element.StudentChallange.isSubmit === true) { %>
+                  <td><button type="button" class="btn btn-success btn-sm">Completed</button></td>
+                <% } %>
+            </tr>
+                <% } %>            
+            <% }) %>        
+        <% }) %>
+        </tbody>
+      </table>
+</div>
